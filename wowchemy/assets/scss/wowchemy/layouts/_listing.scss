@@ -34,13 +34,14 @@
 
 .card-simple .article-title,
 .media.stream-item .article-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.card-simple .article-style,
-.media.stream-item .article-style {
+.card-simple .article-publication,
+.media.stream-item .article-publication {
   margin-top: 2px;
-  font-size: 0.8rem;
+  font-size:  1rem;
+  font-style: italic
 }
 
 .media.stream-item .stream-meta {

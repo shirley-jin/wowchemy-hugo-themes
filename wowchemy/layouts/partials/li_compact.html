@@ -32,16 +32,15 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="{{$link}}" {{ $target | safeHTMLAttr }}>{{ $item.Title }}</a>
+      {{ $item.Title }}
     </div>
 
-    {{ with $summary }}
-    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="summary-link">
-      <div class="article-style">
-        {{.}}
+    <div class="article-publication">
+
+      <div>
+          {{ partial "functions/get_article_style" $item }}
       </div>
-    </a>
-    {{ end }}
+    </div>
 
     <div class="stream-meta article-metadata">
 
@@ -77,9 +76,7 @@
     {{ $resource := ($item.Resources.ByType "image").GetMatch "*featured*" }}
     {{ with $resource }}
     {{ $image := .Resize "150x" }}
-    <a href="{{$link}}" {{ $target | safeHTMLAttr }}>
-      <img src="{{ $image.RelPermalink }}" alt="{{ $item.Title }}" loading="lazy">
-    </a>
+    <img src="{{ $image.RelPermalink }}" alt="{{ $item.Title }}" loading="lazy">
     {{end}}
   </div>
 </div>
